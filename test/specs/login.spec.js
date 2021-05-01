@@ -1,6 +1,7 @@
 import LoginPage from  '../pageobjects/login.page';
 import ProfilePage from '../pageobjects/portal/profile.portal.page';
 
+
 describe('Auth', () => {
     beforeEach(() => {
         LoginPage.open();
@@ -11,8 +12,8 @@ describe('Auth', () => {
     });
 
     it('user logs in with valid data', () => {
-        LoginPage.setLogin('xonol63306@gameqo.com');
-        LoginPage.setPassword('Qwerty!234');
+        LoginPage.setLogin(process.env.LOGIN);
+        LoginPage.setPassword(process.env.PASSWORD);
         LoginPage.clickSubmitButton();
         ProfilePage.isOpen();
     });
